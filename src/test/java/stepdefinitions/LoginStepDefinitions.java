@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.junit.Assert;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 
@@ -18,7 +19,9 @@ public class LoginStepDefinitions {
     @Given("I navigate to the 'We are Community' website")
     public void i_navigate_to_the_we_are_community_website() {
         System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
-        driver = new FirefoxDriver();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        driver = new FirefoxDriver(options);
         driver.get("https://wearecommunity.io/");
         driver.manage().window().fullscreen();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
