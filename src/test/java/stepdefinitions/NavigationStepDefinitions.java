@@ -13,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 
-public class LoginStepDefinitions {
+public class NavigationStepDefinitions {
     WebDriver driver;
 
     @Given("I navigate to the 'We are Community' website")
